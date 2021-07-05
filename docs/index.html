@@ -25,7 +25,7 @@ request.onreadystatechange = function () {
 
 request.send();
 
-  document.getElementById(this.responseText).innerHTML += "<p>" + myArray.shift() "</p>";
+  document.getElementById("demo").innerHTML += this.responseText;
 </script>
 </Body>   
 </Html>  

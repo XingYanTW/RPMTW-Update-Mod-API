@@ -20,7 +20,7 @@ request.onreadystatechange = function () {
     console.log('Status:', this.status);
     console.log('Headers:', this.getAllResponseHeaders());
     console.log('Body:', this.responseText);
-    const obj = JSON.parse(this.responseText);
+    const obj = "id: "+this.responseText.id+"<br>name: "+this.responseText.name
     document.getElementById("demo").innerHTML += obj;
   }
 };

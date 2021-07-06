@@ -10,25 +10,28 @@ curseforge-api
 <p id="demo"></p>
 <script>
 
-postData('https://crowdin.com/api/v2/projects/442446/languages/progress')
-  .then(data => console.log(data)) // JSON from `response.json()` call
-  .catch(error => console.error(error))
+  
+fetch("https://crowdin.com/api/v2/projects/442446/languages/progress", {
+  "headers": {
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "accept-language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7,ko;q=0.6",
+    "cache-control": "max-age=0",
+    "sec-ch-ua": "\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "none",
+    "sec-fetch-user": "?1",
+    "upgrade-insecure-requests": "1"
+  },
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+}).then(data => document.getElementById("demo").innerHTML += data;).catch(error => document.getElementById("demo").innerHTML += data;)
 
-function postData(url) {
-  // Default options are marked with *
-  return fetch(url, {
-    headers: {
-      'user-agent': 'Mozilla/4.0 MDN Example',
-      'content-type': 'application/json',
-      'Access-Control-Allow-Origin': 'https://xingyan.tk',
-      'Authorization': 'Bearer 083e45f6da9f8336006ff98412993f96782ba1f4327e66d9504e3198b95dd0c17b291a9a05b10691'
-    },
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'no-cors', // no-cors, cors, *same-origin
-  })
-  .then(response => response.json()) // 輸出成 json
-  document.getElementById("demo").innerHTML += data;
-}
+
   
 </script>
 </Body>   

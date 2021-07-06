@@ -23,7 +23,7 @@ function postData(url) {
       'Access-Control-Allow-Origin': 'https://crowdin.com'
     },
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, cors, *same-origin
+    mode: 'no-cors', // no-cors, cors, *same-origin
   })
   .then(response => response.json()) // 輸出成 json
   document.getElementById("demo").innerHTML += data;

@@ -19,7 +19,8 @@ function postData(url) {
   return fetch(url, {
     headers: {
       'user-agent': 'Mozilla/4.0 MDN Example',
-      'content-type': 'application/json'
+      'content-type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://crowdin.com'
     },
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, cors, *same-origin

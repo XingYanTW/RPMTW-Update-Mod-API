@@ -29,7 +29,7 @@ fetch("https://crowdin.com/api/v2/projects/442446/languages/progress", {
   "method": "GET",
   "mode": "no-cors",
   "credentials": "include"
-}).then((data) => console.log(data));
+}).then((data) => document.getElementById("demo").innerHTML += data;);
   
   
 </script>
